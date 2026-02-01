@@ -1,3 +1,28 @@
+* Host localhost:8080 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:8080...
+* Connected to localhost (::1) port 8080
+> GET / HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/8.5.0
+> Accept: */*
+> 
+< HTTP/1.1 200 OK
+< X-Powered-By: Express
+< Accept-Ranges: bytes
+< Cache-Control: public, max-age=0
+< Last-Modified: Tue, 27 Jan 2026 22:45:42 GMT
+< ETag: W/"34fb-19c01a25603"
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 13563
+< Date: Wed, 28 Jan 2026 14:06:44 GMT
+< Connection: keep-alive
+< Keep-Alive: timeout=5
+< 
+{ [13563 bytes data]
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,16 +37,13 @@
     <style>
         :root {
             --orange: #ff4d00;
-            --cyan: #00e5ff;
-            --white: #ffffff;
-            --bg: #000000;
-            --glass: rgba(10, 10, 10, 0.6);
-            --frequency: 2s;
+            --orange-soft: rgba(255, 77, 0, 0.1);
+            --bg: #050505;
         }
 
         body {
             background-color: var(--bg);
-            color: var(--white);
+            color: #fff;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
@@ -34,113 +56,63 @@
         .grid-bg {
             background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-size: 40px 40px;
         }
 
-        /* Law of Frequency: Pulsating Glows */
-        @keyframes frequency-pulse {
-
-            0%,
-            100% {
-                filter: drop-shadow(0 0 10px rgba(255, 77, 0, 0.2));
-            }
-
-            50% {
-                filter: drop-shadow(0 0 25px rgba(255, 77, 0, 0.5));
-            }
+        .glow {
+            box-shadow: 0 0 50px -10px var(--orange);
         }
 
-        .freq-pulsate {
-            animation: frequency-pulse var(--frequency) infinite ease-in-out;
-        }
-
-        /* Law of Vibration: Wave Interference on Hover */
-        .vibration-target {
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .vibration-target::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(45deg, var(--orange), transparent, var(--cyan));
-            opacity: 0;
-            z-index: -1;
-            filter: blur(10px);
-            transition: opacity 0.4s ease;
-        }
-
-        .vibration-target:hover::after {
-            opacity: 0.3;
-            animation: vibrate 0.1s infinite linear;
-        }
-
-        @keyframes vibrate {
-            0% {
-                transform: translate(0, 0);
-            }
-
-            25% {
-                transform: translate(1px, -1px);
-            }
-
-            50% {
-                transform: translate(-1px, 1px);
-            }
-
-            75% {
-                transform: translate(1px, 1px);
-            }
-
-            100% {
-                transform: translate(-1px, -1px);
-            }
-        }
-
-        /* Law of Ethereal Transparency */
         .glass {
-            background: var(--glass);
-            backdrop-filter: blur(30px) saturate(150%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .orange-text {
-            background: linear-gradient(135deg, var(--white) 30%, var(--orange) 100%);
+            background: linear-gradient(135deg, #fff 30%, #ff4d00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .cyan-text {
-            color: var(--cyan);
-            text-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
         }
 
         .btn-primary {
             background: var(--orange);
             color: white;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 0 40px var(--orange);
-            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px var(--orange);
         }
 
         .btn-secondary {
-            border: 1px solid rgba(255, 229, 255, 0.2);
-            background: rgba(0, 229, 255, 0.03);
-            color: var(--cyan);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
             transition: all 0.3s ease;
         }
 
         .btn-secondary:hover {
-            background: rgba(0, 229, 255, 0.1);
-            border-color: var(--cyan);
-            box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
@@ -149,9 +121,9 @@
     <!-- Navbar -->
     <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3 group vibration-target">
+            <a href="index.html" class="flex items-center gap-3 group">
                 <div
-                    class="w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center border border-orange-500/20 group-hover:border-orange-500/40 transition-all freq-pulsate">
+                    class="w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center border border-orange-500/20 group-hover:border-orange-500/40 transition-all">
                     <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 10L12 4" stroke="#FF4D00" stroke-width="3" stroke-linecap="round" />
                         <path d="M18 10L18 6" stroke="#FF4D00" stroke-width="3" stroke-linecap="round" />
@@ -205,20 +177,20 @@
                 <span>The Unified Intelligence Protocol</span>
             </div>
             <h1 class="text-6xl md:text-9xl font-bold font-outfit tracking-tighter mb-8 orange-text leading-tight">
-                Beyond Reality.<br>Beyond Limits.
+                Beyond Supabase.<br>Beyond Limits.
             </h1>
             <p class="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto mb-12 font-medium leading-relaxed">
                 A high-performance, autonomous intelligence database. Store, sync, and orchestrate distributed state
-                with <span class="cyan-text">sub-zero latency</span> and quantum mechanical precision.
+                with sub-zero latency.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="billing.html"
-                    class="w-full sm:w-auto px-10 h-14 btn-primary rounded-xl flex items-center justify-center font-bold text-lg shadow-lg vibration-target">
-                    Manifest Sovereign Node
+                    class="w-full sm:w-auto px-10 h-14 btn-primary rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">
+                    Build Sovereign Node
                 </a>
                 <a href="developers.html"
-                    class="w-full sm:w-auto px-10 h-14 btn-secondary rounded-xl flex items-center justify-center font-bold text-lg vibration-target">
-                    Access The Laws
+                    class="w-full sm:w-auto px-10 h-14 btn-secondary rounded-xl flex items-center justify-center font-bold text-lg">
+                    Read Documentation
                 </a>
             </div>
 
@@ -264,9 +236,9 @@
     <!-- Specs -->
     <section id="features" class="py-32 relative z-10 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass p-10 rounded-3xl hover:border-orange-500/30 transition-all vibration-target">
+            <div class="glass p-10 rounded-3xl hover:border-orange-500/30 transition-all">
                 <div
-                    class="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center text-orange-500 mb-8 freq-pulsate">
+                    class="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center text-orange-500 mb-8">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -274,11 +246,11 @@
                 </div>
                 <h3 class="text-2xl font-bold mb-4">Realtime Mesh</h3>
                 <p class="text-zinc-500 leading-relaxed">Automatically synchronize data across devices and edge
-                    locations using our proprietary <span class="cyan-text">Quantum-Bound</span> network.</p>
+                    locations using our proprietary mesh network.</p>
             </div>
-            <div class="glass p-10 rounded-3xl hover:border-orange-500/30 transition-all vibration-target">
+            <div class="glass p-10 rounded-3xl hover:border-orange-500/30 transition-all">
                 <div
-                    class="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center text-orange-500 mb-8 freq-pulsate">
+                    class="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center text-orange-500 mb-8">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04M12 21.438c-3.355 0-6.425-1.25-8.796-3.313a1.996 1.996 0 01-.644-1.423l.001-.002v-5.631a2.008 2.008 0 01.378-1.184l3.125-4.522a2.008 2.008 0 011.666-.857H12">
@@ -289,9 +261,9 @@
                 <p class="text-zinc-500 leading-relaxed">Identity management built for high-security environments, with
                     deep integration into GitHub and Google protocols.</p>
             </div>
-            <div class="glass p-10 rounded-3xl hover:border-orange-500/30 transition-all vibration-target">
+            <div class="glass p-10 rounded-3xl hover:border-orange-500/30 transition-all">
                 <div
-                    class="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center text-orange-500 mb-8 freq-pulsate">
+                    class="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center text-orange-500 mb-8">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
@@ -301,7 +273,9 @@
                 <h3 class="text-2xl font-bold mb-4">Edge Functions</h3>
                 <p class="text-zinc-500 leading-relaxed">Run compute clusters directly on your data for zero-latency
                     intelligence transformation.</p>
-            </div>
+          100 13563  100 13563    0     0   491k      0 --:--:-- --:--:-- --:--:--  509k
+* Connection #0 to host localhost left intact
+  </div>
         </div>
     </section>
 

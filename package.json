@@ -1,9 +1,14 @@
 {
   "name": "@opendev-labs/lamadb",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Unified Intelligence Database for the opendev-labs ecosystem.",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "lamadb": "./cli.js",
+    "lama": "./cli.js"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w",
@@ -22,7 +27,14 @@
   "author": "opendev-labs",
   "license": "MIT",
   "dependencies": {
-    "firebase": "^10.0.0"
+    "boxen": "^8.0.1",
+    "chalk": "^5.6.2",
+    "commander": "14.0.2",
+    "express": "^5.2.1",
+    "firebase": "^10.0.0",
+    "inquirer": "^12.11.1",
+    "ora": "^8.2.0",
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "typescript": "^5.0.0"

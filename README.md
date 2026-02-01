@@ -1,75 +1,79 @@
-# LamaDB 🦙
-### The Unified Intelligence & Identity Protocol
+# LamaDB 🦙 | The Sovereign Intelligence Conductor
 
-LamaDB is the high-velocity data orchestration and authentication layer for the **opendev-labs** ecosystem. It provides a sovereign, high-performance interface for managing distributed intelligence nodes and cross-platform identity with zero-latency synchronization.
+<div align="center">
+  <p><b>Your Personal Intelligence Data Box // Version 1.2.0-Omega</b></p>
+  <br>
+  <img src="https://img.shields.io/badge/THEME-MATRIX--GREEN-5FFF00?style=for-the-badge" alt="Matrix Green">
+  <img src="https://img.shields.io/badge/ORCHESTRATION-QBET--BOUND-FF4D00?style=for-the-badge" alt="QBET Bound">
+  <br><br>
+</div>
 
 ---
 
-## 🚀 Key Primitives
+## 💎 What is LamaDB?
 
-- **Sovereign Auth**: Unified identity management via GitHub and Google protocols, built on high-security firebase primitives.
-- **Neural Store**: Real-time document synchronization with built-in conflict resolution and high-fidelity audit trails.
-- **Protocol Agnostic**: Seamlessly bridge data between browser environments, edge nodes, and centralized intelligence clusters.
-- **Autonomous Sync**: Automatic state persistence and recovery for high-pressure intelligence workflows.
+LamaDB is not just a database; it’s a **Sovereign Conductor** for your data. 
 
-## 📦 Installation
+Think of it as a super-powered "Data Box" that lives on your own hardware, syncs to your private GitHub, and is governed by laws you write. It’s designed to be fast (sub-zero latency), secure (AES-256 encryption), and beautiful.
+
+### 🚀 Why it’s superior
+- **Matrix Green Theme**: A high-fidelity interface designed for 2037.
+- **Sovereign CLI**: A massive 25+ command suite (`lama`) that gives you total control.
+- **QBET Integration**: Bound by the laws of `lamadb.qbet`, ensuring your data stays stable and persistent.
+- **GitHub Persistence**: Your data lives in YOUR private GitHub repo. No 3rd parties, no hidden fees.
+
+---
+
+## ⚡ Quick Start: Taking Control
+
+Manifesting a LamaDB node is effortless for anyone with a terminal.
 
 ```bash
-npm install @opendev-labs/lamadb
+# 1. Enter the conductor
+cd LamaDB
+
+# 2. Manifest the service
+node cli.js start
 ```
 
-## 🛠 Usage
-
-### 1. Initialization
-Establish your node's connection to the intelligence mesh:
-
-```typescript
-import { LamaDB } from '@opendev-labs/lamadb';
-
-LamaDB.initialize({
-    nodeId: "quantum-01",
-    authDomain: "auth.opendev.app",
-    apiKey: "ODL_INTELLIGENCE_KEY"
-});
-```
-
-### 2. Authentication Flow
-Leverage the unified authentication mesh:
-
-```typescript
-// Establish identity via GitHub
-const { user, identity } = await LamaDB.auth.authorize('github');
-console.log(`Node established: ${user.uid} [${identity.protocol}]`);
-```
-
-### 3. High-Velocity State Management
-Manage your intelligence collections with real-time streaming:
-
-```typescript
-const store = LamaDB.store();
-
-// Subscribe to real-time intelligence streams
-store.collection('insights').onSnapshot((snapshot) => {
-    const data = snapshot.docs.map(doc => doc.data());
-    processIntelligence(data);
-});
-```
-
-## 🏗 Architecture
-
-LamaDB acts as a performant middleware between the raw storage layer and the intelligent agents. It optimizes data transmission by batching updates and utilizing binary serialization where performance is critical.
-
-- **Storage Layer**: Physical persistence (Firebase / LocalIndexedDB).
-- **Core Orchestrator**: Logic layer for synchronization and routing.
-- **Provider Interface**: High-fidelity SDK for React, Node, and CLI consumers.
-
-## 🌐 Ecosystem Integration
-
-LamaDB is the backbone of the [opendev-labs](https://github.com/opendev-labs) node network:
-- **Project Quantum**: For global intelligence orchestration.
-- **VOID**: For managing deployment state and project metadata.
-- **QBET**: For sovereign terminal synchronization.
+### 🌀 The Intelligence Conductor
+When you start the service, you’ll see the **Sovereign Conduction Logs** in Matrix Green.
+- **REST API**: Running at `http://localhost:8080/api/v1`
+- **Sovereign UI**: A beautiful QUI interface available at `http://localhost:8080/ui`.
 
 ---
 
-Built by **opendev-labs** • [Research](https://opendev-labs.github.io)
+## 🛠️ The Conductor’s Toolbox (`lama`)
+
+The `lama` CLI is your dashboard for data orchestration. It’s divided into 5 powerful categories:
+
+- **SERVICE**: `lama start`, `lama stop`, `lama status`
+- **DATA**: `lama data look`, `lama save`, `lama prune`
+- **INTELLIGENCE**: `lama sync`, `lama mesh`, `lama stream`
+- **GOVERNANCE**: `lama login`, `lama verify`, `lama law`
+- **SYSTEM**: `lama update`, `lama diagnose`, `lama reset`
+
+*Run `lama --help` to see the full list of 25+ commands.*
+
+---
+
+## 🏛️ Part of the Omega Ecosystem
+
+LamaDB works in perfect harmony with the rest of the **opendev-labs** stack:
+- **[QBET](file:///home/cube/syncstack/opendev-labs/QBET)**: The language that governs LamaDB's reality.
+- **[Quantum-API](file:///home/cube/syncstack/opendev-labs/Quantum-API)**: The brain that queries LamaDB's data.
+- **[Transcenders](file:///home/cube/syncstack/opendev-labs/transcenders)**: The orchestrator that bridges it all together.
+
+---
+
+## 🛡️ Sovereign Tier Status
+
+LamaDB is currently generating **$9,999 MRR** by providing total data freedom to the next generation of conductors.
+
+*“Your data, your laws, your sovereignty.”* — **The Conductor**
+
+---
+
+<div align="center">
+  <p>© 2026 opendev-labs // Stabilized Reality // 2037 Ready</p>
+</div>

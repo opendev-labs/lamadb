@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers | LamaDB Sovereign Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --orange: #ff4d00;
+            --bg: #050505;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-outfit {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .grid-bg {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .glass {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .terminal-font {
+            font-family: 'Fira Code', monospace;
+        }
+
+        .code-block {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="grid-bg">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center border border-orange-500/20">
+                    <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 10L12 4" stroke="#FF4D00" stroke-width="3" stroke-linecap="round" />
+                        <path d="M18 10L18 6" stroke="#FF4D00" stroke-width="3" stroke-linecap="round" />
+                        <path
+                            d="M8 32V12C8 10.8954 8.89543 10 10 10H20C21.1046 10 22 10.8954 22 12V18H28C29.1046 18 30 18.8954 30 20V24C30 25.1046 29.1046 26 28 26H22V32"
+                            stroke="#FF4D00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="15" cy="15" r="1.5" fill="#FF4D00" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold tracking-tighter font-outfit">LamaDB</span>
+            </a>
+            <div class="flex items-center gap-8 text-sm font-medium text-zinc-400">
+                <a href="index.html" class="hover:text-white">Home</a>
+                <a href="solutions.html" class="hover:text-white">Solutions</a>
+                <a href="cloud.html" class="hover:text-white">Cloud</a>
+                <a href="dashboard.html" class="text-orange-500 font-bold">Console</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-40 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row gap-16">
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-64 space-y-8 hidden md:block">
+            <div class="space-y-4">
+                <h4 class="text-[10px] font-bold uppercase tracking-widest text-zinc-600">Getting Started</h4>
+                <nav class="flex flex-col gap-2">
+                    <a href="#" class="text-sm font-medium text-orange-500">Introduction</a>
+                    <a href="#"
+                        class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Architecture</a>
+                    <a href="#" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">CLI
+                        Installation</a>
+                </nav>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-[10px] font-bold uppercase tracking-widest text-zinc-600">SDK Reference</h4>
+                <nav class="flex flex-col gap-2">
+                    <a href="#"
+                        class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Connection</a>
+                    <a href="#" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">CRUD
+                        Operations</a>
+                    <a href="#" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Syncing
+                        Streams</a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        <div class="flex-1 space-y-16">
+            <section>
+                <h1 class="text-5xl font-bold tracking-tighter mb-6">Build the Future.</h1>
+                <p class="text-lg text-zinc-400 leading-relaxed mb-8">LamaDB is built by developers, for developers. Our
+                    tooling is designed to be invisible, powerful, and truly sovereign.</p>
+
+                <h3 class="text-2xl font-bold mb-4">LamaDB CLI</h3>
+                <p class="text-zinc-500 mb-6">Manifest your environment in seconds with our professional cli tool.</p>
+                <div class="code-block terminal-font text-sm">
+                    <p class="text-zinc-600"># Install the global intelligence handler</p>
+                    <p class="text-white">npm install -g @opendev-labs/lamadb-cli</p>
+                    <p class="text-zinc-600 mt-4"># Initialize your first sovereign node</p>
+                    <p class="text-white">lamadb init --node quantum-01</p>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-2xl font-bold mb-4">The Node.js SDK</h3>
+                <p class="text-zinc-500 mb-6">Integrate sub-zero latency persistence into your applications with a
+                    single import.</p>
+                <div class="code-block terminal-font text-sm">
+                    <p class="text-orange-500">import <span class="text-white">{ LamaDB }</span> from <span
+                            class="text-zinc-400">'@opendev-labs/lamadb'</span>;</p>
+                    <p class="text-zinc-600 mt-4">// Connect to the local mesh</p>
+                    <p class="text-white">const db = await LamaDB.connect();</p>
+                    <p class="text-zinc-600 mt-4">// Real-time state replication</p>
+                    <p class="text-white">db.collection('neural-streams').sync((state) => {</p>
+                    <p class="text-white ml-4">console.log('Synchronized:', state);</p>
+                    <p class="text-white">});</p>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

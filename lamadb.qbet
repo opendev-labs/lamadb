@@ -1,0 +1,30 @@
+// LamaDB Sovereign Configuration (QBET Syntax)
+// Manifest ID: ldb-manifest-2026-v2
+
+manifest "lamadb-core" {
+  provider: "opendev-labs"
+  tier: "sovereign-intelligence"
+  version: "1.2.0-stable"
+
+  service "express" {
+    engine: "node"
+    port: 8080
+    root: "./"
+    ui_route: "/ui"
+    ui_framework: "QUI" // Quantum-UI Infused
+  }
+
+  persistence "vault" {
+    adapter: "git-sovereign"
+    sync_interval: "0.2ms"
+    encryption: "aes-256-gcm"
+    vibration_sync: true
+  }
+
+  protocol "intelligence" {
+    latency_threshold: 0.001
+    failover: "quantum-01"
+    mesh: active
+    spirit_check: enabled
+  }
+}

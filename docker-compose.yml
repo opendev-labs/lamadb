@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  lamadb-engine:
+    build: .
+    container_name: lamadb-node-01
+    ports:
+      - "5174:5174"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - NODE_NAME=quantum-01
+      - TIER=sovereign
+      - GITHUB_VAULT=user/lamadb-vault
+    restart: always
+
+networks:
+  lamadb-mesh:
+    driver: bridge

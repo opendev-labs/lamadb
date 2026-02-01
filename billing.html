@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | LamaDB Sovereign Tier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --orange: #ff4d00;
+            --bg: #050505;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-outfit {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .grid-bg {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .glass {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .orange-glow {
+            box-shadow: 0 0 30px -10px var(--orange);
+        }
+    </style>
+</head>
+
+<body class="grid-bg min-h-screen">
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center border border-orange-500/20 group-hover:border-orange-500/40 transition-all">
+                    <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 10L12 4" stroke="#FF4D00" stroke-width="3" stroke-linecap="round" />
+                        <path d="M18 10L18 6" stroke="#FF4D00" stroke-width="3" stroke-linecap="round" />
+                        <path
+                            d="M8 32V12C8 10.8954 8.89543 10 10 10H20C21.1046 10 22 10.8954 22 12V18H28C29.1046 18 30 18.8954 30 20V24C30 25.1046 29.1046 26 28 26H22V32"
+                            stroke="#FF4D00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="15" cy="15" r="1.5" fill="#FF4D00" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold tracking-tighter font-outfit">LamaDB</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-40 pb-20 px-6 max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold font-outfit tracking-tighter mb-6">Choose Your Reality.</h1>
+        <p class="text-zinc-400 text-xl max-w-2xl mx-auto mb-20">Secure your spot in the distributed intelligence mesh.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- Free Tier -->
+            <div class="glass p-10 rounded-3xl border border-white/5 flex flex-col text-left">
+                <h3 class="text-2xl font-bold mb-2">Explorer</h3>
+                <div class="text-4xl font-bold mb-6">$0 <span class="text-sm font-normal text-zinc-500">/ forever</span>
+                </div>
+                <ul class="space-y-4 mb-10 text-zinc-400 text-sm">
+                    <li class="flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-orange-500"></div> IndexedDB Local Storage
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-orange-500"></div> Public P2P Mesh
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-orange-500"></div> 100 Sync Transactions/day
+                    </li>
+                </ul>
+                <button
+                    class="mt-auto w-full py-4 glass rounded-xl font-bold hover:border-white/20 transition-all">Current
+                    Plan</button>
+            </div>
+
+            <!-- Sovereign Tier -->
+            <div
+                class="glass p-10 rounded-3xl border border-orange-500/30 orange-glow flex flex-col text-left relative overflow-hidden">
+                <div
+                    class="absolute top-5 right-5 bg-orange-600 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-white">
+                    Most Powerful</div>
+                <h3 class="text-2xl font-bold mb-2">Sovereign</h3>
+                <div class="text-4xl font-bold mb-6">$9,999 <span class="text-sm font-normal text-zinc-500">/
+                        month</span></div>
+                <ul class="space-y-4 mb-10 text-zinc-400 text-sm">
+                    <li class="flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-orange-500"></div> GitHub Persistence Layer (Private
+                        Vault)
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-orange-500"></div> Heavy Compute Docker Node
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-orange-500"></div> Sub-zero 0.002ms Latency
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-orange-500"></div> Quantum Failover Protection
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-orange-500"></div> Direct Razorpay Priority
+                        Manifestation
+                    </li>
+                </ul>
+                <a href="success.html"
+                    class="mt-auto w-full py-4 bg-orange-600 rounded-xl font-bold text-center hover:bg-orange-500 transition-all shadow-lg shadow-orange-600/20">Manifest
+                    Now</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-20 text-center text-zinc-600 text-sm">
+        <p>&copy; 2026 opendev-labs. Sovereign Intelligence Protocol.</p>
+    </footer>
+</body>
+
+</html>

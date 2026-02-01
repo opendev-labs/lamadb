@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud | LamaDB Sovereign Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --orange: #ff4d00;
+            --bg: #050505;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-outfit {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .grid-bg {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .glass {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .orange-text {
+            background: linear-gradient(135deg, #fff 30%, #ff4d00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow {
+            box-shadow: 0 0 50px -10px var(--orange);
+        }
+    </style>
+</head>
+
+<body class="grid-bg min-h-screen">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center border border-orange-500/20">
+                    <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 10L12 4" stroke="#FF4D00" stroke-width="3" stroke-linecap="round" />
+                        <path d="M18 10L18 6" stroke="#FF4D00" stroke-width="3" stroke-linecap="round" />
+                        <path
+                            d="M8 32V12C8 10.8954 8.89543 10 10 10H20C21.1046 10 22 10.8954 22 12V18H28C29.1046 18 30 18.8954 30 20V24C30 25.1046 29.1046 26 28 26H22V32"
+                            stroke="#FF4D00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="15" cy="15" r="1.5" fill="#FF4D00" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold tracking-tighter font-outfit">LamaDB</span>
+            </a>
+            <div class="flex items-center gap-8 text-sm font-medium text-zinc-400">
+                <a href="index.html" class="hover:text-white">Home</a>
+                <a href="solutions.html" class="hover:text-white">Solutions</a>
+                <a href="developers.html" class="hover:text-white">Developers</a>
+                <a href="dashboard.html" class="text-orange-500 font-bold">Console</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-40 pb-20 px-6 max-w-7xl mx-auto text-center">
+        <div class="max-w-4xl mx-auto mb-20">
+            <h1 class="text-7xl font-black font-outfit tracking-tighter mb-8 orange-text">The GitHub Sovereign Vault.
+            </h1>
+            <p class="text-2xl text-zinc-400 font-medium leading-relaxed">Your data doesn't belong to us. It belongs to
+                you, preserved in your own personal GitHub persistence layer.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <div class="glass p-10 rounded-3xl text-left border border-white/5">
+                <h3 class="text-xl font-bold mb-4">Zero Trust Cloud</h3>
+                <p class="text-zinc-500 text-sm leading-relaxed italic">No central servers. LamaDB uses your GitHub
+                    identity to authenticate and your private repos to store.</p>
+            </div>
+            <div class="glass p-10 rounded-3xl text-left border border-orange-500/20 glow">
+                <h3 class="text-xl font-bold mb-4">Managed Mesh</h3>
+                <p class="text-zinc-500 text-sm leading-relaxed italic">Let us orchestrate the P2P handshakes while you
+                    keep the data. High-availability without the centralized headache.</p>
+            </div>
+            <div class="glass p-10 rounded-3xl text-left border border-white/5">
+                <h3 class="text-xl font-bold mb-4">LFS Persistence</h3>
+                <p class="text-zinc-500 text-sm leading-relaxed italic">Store massive datasets using Git LFS. Version
+                    control for your database, built right into the cloud protocol.</p>
+            </div>
+        </div>
+
+        <div class="glass p-12 rounded-[3rem] border border-white/10 max-w-4xl mx-auto relative overflow-hidden group">
+            <div class="absolute inset-0 bg-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <h2 class="text-4xl font-bold mb-6 italic tracking-tight">Ready for Sovereign Cloud?</h2>
+            <p class="text-zinc-400 mb-10">Join 40+ nodes already manifested in the global intelligence mesh.</p>
+            <a href="billing.html"
+                class="inline-flex px-12 py-5 bg-orange-600 rounded-2xl font-black text-lg hover:bg-orange-500 transition-all shadow-xl shadow-orange-600/10">MANIFEST
+                NOW</a>
+        </div>
+    </main>
+</body>
+
+</html>
